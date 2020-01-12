@@ -1,0 +1,60 @@
+<div class="container mt-5" >
+	<!-- <article class="card-body mt-4"> -->
+		<table datatable="ng" class="row-border hover" >
+
+			<thead>
+				<tr>
+					<th> _ </th>
+					<th>ConnectionID</th>
+					<th>Age</th>
+					<th>Calculated_Age</th>
+					<th>Gender</th>
+					<th>OwnerID</th>
+					<th>Owner_Score</th>
+					<th>PropertyName</th>
+					<th>DateMeasured</th>
+					<th>AssessedScore</th>
+					<th>Fall</th>
+				
+
+				</tr>
+			</thead>
+			
+			<tbody>
+			
+				<tr ng-repeat="x in names">
+					<td>{{ $index + 1 }}</td>
+					<td>{{ x.ConnectionID }}</td>
+					<td>{{ x.Age }}</td>
+					<td>{{ x.Calculated_Age }}</td>
+					<td>{{ x.Gender }}</td>
+					<td>{{ x.OwnerID }}</td>
+					<td>{{ x.Owner_Score }}</td>
+					<td>{{ x.PropertyName }}</td>
+					<td>{{ x.DateMeasured }}</td>
+					<td>{{ x.AssessedScore }}</td>
+					<td>{{ x.Fall }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</div> 
+
+<style>
+	table, th , td {
+	  border: 1px solid grey;
+	  border-collapse: collapse;
+	  padding: 5px;
+	}
+	
+	table tr:nth-child(odd) {
+	  background-color: lightblue;
+	}
+	
+	table tr:nth-child(even) {
+	  background-color: #ffffff;
+	}
+</style>
+
+
+<!--container end.//-->

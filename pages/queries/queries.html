@@ -1,0 +1,82 @@
+<div class="container" >
+	<div class="row mt-4">
+		<div class="col">
+		</div>
+		<div class="col-sm-5">
+			<aside id="card_main">
+				<div class="card" style="opacity: 0.85">
+					<article class="card-body">
+						<h5 class="card-title text-center mb-4 mt-1">Please input the details below</h5>
+						<form name="queryform">
+							<!-- check box -->
+							<div class="form-group input-group input-group-prepend">
+								<select class="custom-select mb-0" ng-model="gender" required>
+									<option value="" disabled selected>Gender</option>  
+									<option >male</option> 
+									<option >female</option> 
+									<option >male,female</option> 
+									<option ng-repeat="item in questions" ng-value="item">{{item}}</option>
+								</select>
+							</div>
+							
+							<div class="form-group input-group input-group-prepend">
+								<select class="custom-select mb-0" ng-model="age"   ng-disabled="gender_validity()" required>
+									<option value="" disabled selected>Age</option>
+									<option ng-repeat="item in ageList" ng-value="item">{{item}}</option>
+
+								</select>
+							</div>	
+							
+							<div class="form-group input-group input-group-prepend">
+								<select class="custom-select mb-0" ng-model="hcs" ng-disabled="age_validity()" required>
+									<option value="" disabled selected>Home Care Score</option>
+									<option ng-repeat="item in hcsList" ng-value="item">{{item}}</option>
+									
+								</select>
+							</div>	
+
+							<div class="form-group input-group input-group-prepend">
+								<select class="custom-select mb-3" ng-model="population" ng-disabled="hcs_validity()" required>
+									<option value="" disabled selected>Population</option>
+									<option ng-repeat="item in populationList" ng-value="item">{{item}}</option>
+								</select>
+							</div>	
+							
+							<div class="form-group input-group input-group-prepend">
+								<span class="input-group-text"> <i class=""></i> </span>
+								<input name="" class="form-control" placeholder="# Food Actions" type="text" ng-model="food" ng-disabled="true" >
+							</div>
+
+							<div class="form-group input-group input-group-prepend mt-4">
+								<select class="custom-select mb-0" ng-model="ra" ng-disabled="population_validity_ra()" required>
+									<option value="" disabled selected>Risk Assessments</option>
+									<option ng-repeat="item in raList" ng-value="item">{{item}}</option>
+								</select>
+							</div>
+
+							
+							<div class="form-group input-group input-group-prepend">
+								<select class="custom-select mb-3" ng-model="ma" ng-disabled="population_validity_ma()" required>
+									<option value="" disabled selected>Mesurments</option>
+									<option ng-repeat="item in maList" ng-value="item">{{item}}</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block" ng-click="queryform.$valid && runQuery_ra()" href="#!options" > Run Query </button>
+							</div> <!-- form-group// -->
+							
+						</form>
+					</article>
+				</div> <!-- card.// -->
+			</aside> <!-- col.// -->
+		</div>
+
+		<div class="col">
+		</div>
+
+	</div> <!-- row.// -->	
+</div> 
+
+
+<!--container end.//-->

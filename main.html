@@ -1,0 +1,58 @@
+<html>
+     <head>
+        <title>Prototype</title>
+    </head>
+    <body ng-app="myApp">
+        
+        <!-- load angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+        <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        
+        <!-- load css -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        
+        
+        <!-- load app -->
+        <script src="main.js"></script>
+
+        <!-- load controllers -->
+        <script src="pages/home/homeController.js"></script>
+        <script src="pages/prediction/predictionController.js"></script>
+        <script src="pages/queries/queriesController.js"></script>
+        <script src="pages/contact/contactController.js"></script>
+        <script src="pages/about/aboutController.js"></script>
+        <script src="pages/queryOutput/optionsController.js"></script>
+        <script src="pages/queryOutput/graphsController.js"></script>
+        <script src="pages/queryOutput/tableController.js"></script>
+       
+        <!-- the website -->        
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="#">Logo</a>
+            
+            <!-- Links -->
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#!home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!prediction">Prediction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!queries">Queries</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!about">About</a>
+              </li>
+            </ul>
+          </nav>
+      
+       <!-- This section changes as the hashbang changes -->
+        <div ng-view></div>
+    </body>
+</html>
