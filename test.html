@@ -1,0 +1,182 @@
+<html>
+<head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current',
+            {'packages': ['table', 'corechart']});
+
+        google.setOnLoadCallback(drawSimpleDataTable);
+        google.setOnLoadCallback(drawDryGenderDetailsSimpleChart);
+        google.setOnLoadCallback(drawDryOwnerScoreSimpleChart);
+
+        var jsonData = [
+            {
+                "": 0,
+                "ConnectionID": "174C4CFE-C8CE-401E-AB74-25EF5AF4F279",
+                "Age": 97,
+                "Calculated_Age": 100,
+                "Gender": "Female",
+                "OwnerID": "084AB41B-53E7-42D5-9B5E-081F0102B3E6",
+                "Owner_Score": "Good",
+                "PropertyName": "Blood O2",
+                "DateMeasured": "2018-10-03 15:27:12.3390000 +01:00",
+                "MeasurementValue1": 147
+            },
+            {
+                "": 1,
+                "ConnectionID": "789873F1-0F4C-4936-B97B-68D75F4E2487",
+                "Age": 96,
+                "Calculated_Age": 100,
+                "Gender": "Female",
+                "OwnerID": "34744739-3A89-47F5-8D9F-73310D3A5025",
+                "Owner_Score": "Good",
+                "PropertyName": "Blood O2",
+                "DateMeasured": "2019-01-20 18:50:20.9540000 +00:00",
+                "MeasurementValue1": 36.5
+            },
+            {
+                "": 2,
+                "ConnectionID": "74A7BAB3-0245-47C4-AC93-77F5564B2127",
+                "Age": 95,
+                "Calculated_Age": 95,
+                "Gender": "Female",
+                "OwnerID": "26058464-FF9C-4708-9746-1E8C6ADC9140",
+                "Owner_Score": "Outstanding",
+                "PropertyName": "Blood O2",
+                "DateMeasured": "2018-06-29 18:59:57.5810000 +01:00",
+                "MeasurementValue1": 61
+            }
+        ];
+
+
+
+
+        function drawSimpleDataTable() {
+            var tableData = new google.visualization.DataTable();
+            tableData.addColumn('string', 'ConnectionID');
+            tableData.addColumn('string', 'id');
+            tableData.addColumn('number', 'Age');
+            tableData.addColumn('number', 'Calculated_Age');
+            tableData.addColumn('string', 'Gender');
+            tableData.addColumn('string', 'OwnerID');
+            tableData.addColumn('string', 'Owner_Score');
+            tableData.addColumn('string', 'PropertyName');
+            tableData.addColumn('string', 'DateMeasured');
+            tableData.addColumn('number', 'MeasurementValue1');
+
+            jsonData.forEach(function (row) {
+                tableData.addRow([
+                    row.ConnectionID,
+                    row.id,
+                    row.Age,
+                    row.Calculated_Age,
+                    row.Gender,
+                    row.OwnerID,
+                    row.Owner_Score,
+                    row.PropertyName,
+                    row.DateMeasured,
+                    row.MeasurementValue1
+                ]);
+            });
+            var simpleDataTable = new google.visualization.Table(document.getElementById('table_div'));
+            simpleDataTable.draw(tableData, {showRowNumber: true, width: '80%', height: '80%'});
+        }
+
+        function drawDryGenderDetailsSimpleChart() {
+            var tableData = new google.visualization.DataTable();
+            tableData.addColumn('string', 'ConnectionID');
+            tableData.addColumn('string', 'id');
+            tableData.addColumn('number', 'Age');
+            tableData.addColumn('number', 'Calculated_Age');
+            tableData.addColumn('string', 'Gender');
+            tableData.addColumn('string', 'OwnerID');
+            tableData.addColumn('string', 'Owner_Score');
+            tableData.addColumn('string', 'PropertyName');
+            tableData.addColumn('string', 'DateMeasured');
+            tableData.addColumn('number', 'MeasurementValue1');
+
+            jsonData.forEach(function (row) {
+                tableData.addRow([
+                    row.ConnectionID,
+                    row.id,
+                    row.Age,
+                    row.Calculated_Age,
+                    row.Gender,
+                    row.OwnerID,
+                    row.Owner_Score,
+                    row.PropertyName,
+                    row.DateMeasured,
+                    row.MeasurementValue1
+                ]);
+            });
+            var data = google.visualization.arrayToDataTable([
+                ['Gender', '%'],
+                ['Male', 11],
+                ['Female', 2]
+            ]);
+
+            var options = {
+                title: 'Gender',
+                is3D: true,
+            };
+
+            var drawDryDetailsSimpleChart = new google.visualization.PieChart(document.getElementById('gender_piechart_3d'));
+            drawDryDetailsSimpleChart.draw(data, options);
+        }
+
+        function drawDryOwnerScoreSimpleChart() {
+            var tableData = new google.visualization.DataTable();
+            tableData.addColumn('string', 'ConnectionID');
+            tableData.addColumn('string', 'id');
+            tableData.addColumn('number', 'Age');
+            tableData.addColumn('number', 'Calculated_Age');
+            tableData.addColumn('string', 'Gender');
+            tableData.addColumn('string', 'OwnerID');
+            tableData.addColumn('string', 'Owner_Score');
+            tableData.addColumn('string', 'PropertyName');
+            tableData.addColumn('string', 'DateMeasured');
+            tableData.addColumn('number', 'MeasurementValue1');
+
+            jsonData.forEach(function (row) {
+                tableData.addRow([
+                    row.ConnectionID,
+                    row.id,
+                    row.Age,
+                    row.Calculated_Age,
+                    row.Gender,
+                    row.OwnerID,
+                    row.Owner_Score,
+                    row.PropertyName,
+                    row.DateMeasured,
+                    row.MeasurementValue1
+                ]);
+            });
+            var data = google.visualization.arrayToDataTable([
+                ['Owner Score', '%'],
+                ['None', 11],
+                ['Good', 2],
+                ['Outstanding', 2],
+                ['Required improvement', 2]
+            ]);
+
+            var options = {
+                title: 'Owner Score',
+                is3D: true,
+            };
+
+            var drawDryOwnerScoreSimpleChart = new google.visualization.PieChart(document.getElementById('owner_score_piechart_3d'));
+            drawDryOwnerScoreSimpleChart.draw(data, options);
+        }
+
+    </script>
+</head>
+
+<body>
+<!--Div that will hold the pie chart-->
+<div id="gender_piechart_3d"></div>
+<div id="owner_score_piechart_3d"></div>
+<div id="table_div"></div>
+
+</body>
+</html>
