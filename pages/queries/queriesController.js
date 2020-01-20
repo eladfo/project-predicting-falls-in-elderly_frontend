@@ -1,6 +1,7 @@
 angular.module("myApp")
 .controller("queriesController", function ($scope, $http , $window, $rootScope, UserService) {
 
+    
     var genderFlag = true;
     var ageFlag = true;
     var hcsFlag = true;
@@ -76,14 +77,14 @@ angular.module("myApp")
             if(hcsFlag)
             {
                 filterJsn.ownerScore = $scope.hcs;
-                $http({
-                    method: 'POST', url: serverUrl + "dfilter", data: filterJsn
-                }).then(function (success) {
-                    $scope.populationList = success.data;
-                    $scope.populationList = JSON.parse($scope.populationList.data).pop;
-                }, function (error) {
-                    console.log(error);
-                });   
+                // $http({
+                //     method: 'POST', url: serverUrl + "dfilter", data: filterJsn
+                // }).then(function (success) {
+                //     $scope.populationList = success.data;
+                //     $scope.populationList = JSON.parse($scope.populationList.data).pop;
+                // }, function (error) {
+                //     console.log(error);
+                // });   
                 hcsFlag = false;
             }
         }
@@ -166,7 +167,8 @@ angular.module("myApp")
             UserService.raQueryData = JSON.parse(UserService.raQueryData.data);
             $rootScope.test = success.data;
             $rootScope.test = JSON.parse($rootScope.test.data);
-                        
+            var dic = {};
+            
             // console.log("lalalalala")
             // console.log(UserService.raQueryData)
         }, function (error) {

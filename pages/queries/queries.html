@@ -3,19 +3,17 @@
 		<div class="col">
 		</div>
 		<div class="col-sm-5">
-			<aside id="card_main">
-				<div class="card" style="opacity: 0.85">
+			<!-- <aside id="card_main"> -->
+				<div class="card bg-light" style="opacity: 0.85">
 					<article class="card-body">
 						<h5 class="card-title text-center mb-4 mt-1">Please input the details below</h5>
 						<form name="queryform">
-							<!-- check box -->
 							<div class="form-group input-group input-group-prepend">
 								<select class="custom-select mb-0" ng-model="gender" required>
 									<option value="" disabled selected>Gender</option>  
 									<option >male</option> 
 									<option >female</option> 
 									<option >male,female</option> 
-									<option ng-repeat="item in questions" ng-value="item">{{item}}</option>
 								</select>
 							</div>
 							
@@ -38,13 +36,15 @@
 							<div class="form-group input-group input-group-prepend">
 								<select class="custom-select mb-3" ng-model="population" ng-disabled="hcs_validity()" required>
 									<option value="" disabled selected>Population</option>
-									<option ng-repeat="item in populationList" ng-value="item">{{item}}</option>
+									<!-- <option ng-repeat="item in populationList" ng-value="item">{{item}}</option> -->
+									<option> Fallers </option>
+									<option> Non-Fallers </option>
 								</select>
 							</div>	
 							
 							<div class="form-group input-group input-group-prepend">
 								<span class="input-group-text"> <i class=""></i> </span>
-								<input name="" class="form-control" placeholder="# Food Actions" type="text" ng-model="food" ng-disabled="true" >
+								<input name="" class="form-control" placeholder="# Food Actions --- Not-Avaible" type="text" ng-model="food" ng-disabled="true" >
 							</div>
 
 							<div class="form-group input-group input-group-prepend mt-4">

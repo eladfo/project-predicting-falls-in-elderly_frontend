@@ -1,5 +1,5 @@
 
-let app = angular.module('myApp', ["ngRoute"]);
+var app = angular.module('myApp', ["ngRoute" , "ngSanitize", "ngCsv"]);
 // config routes
 
 app.factory('UserService', function() {
