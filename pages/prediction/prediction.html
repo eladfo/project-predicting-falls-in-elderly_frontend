@@ -7,30 +7,37 @@
 						<h5 class="card-title text-center mb-4 mt-1">Please input the details below</h5>
 						<form name="loginform">
 							<div class="form-group input-group input-group-prepend">
-								<select name="cars" class="custom-select mb-0">
-									<option selected>Method</option>
-									<option value="male">Algo 1</option>
-									<option value="female">Algo 2</option>
+								<select ng-model="method"  class="custom-select mb-0" required>
+									<option value="" disabled selected>Method</option>
+									<option value="1">Decision Tree</option>
+									<option value="2">Naive Bayes</option>
+									<option value="3">Neural Network</option>
+									<option value="4">Random Forest</option>
+									<option value="5">KNN</option>
 								</select>
 							</div>
 							
-							<div class="form-group input-group input-group-prepend">
-								<select name="cars" class="custom-select mb-0">
-									<option selected>Predictive output</option>
-									<option value="1">Falls</option>
-									<option value="2"></option>
-									<option value="3"></option>
+							<div class="form-group input-group input-group-prepend" required>
+								<select ng-model="predict"  class="custom-select mb-0">
+									<option value="" disabled selected>Predictive output</option>
+									<option value="1">Fall</option>
+									<option value="2">Hospitalization</option>
+									<option value="3">Death</option>
 								</select>
 							</div>	
 							
-							<div class="form-group input-group input-group-prepend">
-								<select name="cars" class="custom-select mb-2">
-									<option selected>Period (optional)</option>
-									<option value="1">Month</option>
-									<option value="2"></option>
-									<option value="3"></option>
+							<div class="form-group input-group input-group-prepend" required>
+								<select ng-model="period"  class="custom-select mb-2">
+									<option value="" disabled selected>Period</option>
+									<option value="1">7</option>
+									<option value="2">21</option>
+									<option value="3">30</option>
 								</select>
 							</div>	
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block" ng-click="show_graph()" href="#!graphsRA"> Predict </button>
+							</div>
 
 						</form>
 					</article>

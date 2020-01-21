@@ -28,6 +28,10 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/prediction/prediction.html',
             controller : 'predictionController as predictionCtrl'
         })
+        .when('/predict_graph', {
+            templateUrl: 'pages/prediction/predict_graph.html',
+            controller : ''
+        })
         .when('/queries', {
             templateUrl: 'pages/queries/queries.html',
             controller : 'queriesController as queriesCtrl'
