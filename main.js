@@ -40,9 +40,17 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/queryOutput/options.html',
             controller : 'optionsController as optionsCtrl'
         })
-        .when('/graphs', {
-            templateUrl: 'pages/queryOutput/graphs.html',
-            controller : 'graphsController as optionsCtrl'
+        .when('/graphsRA', {
+            templateUrl: 'pages/queryOutput/graphsRA.html',
+            controller : 'graphsRAController as optionsCtrl'
+        })
+        .when('/graphsMA', {
+            templateUrl: 'pages/queryOutput/graphsMA.html',
+            controller : 'graphsMAController as optionsCtrl'
+        })
+        .when('/graphsActions', {
+            templateUrl: 'pages/queryOutput/graphsActions.html',
+            controller : 'graphsActionsController as optionsCtrl'
         })
         .when('/table', {
             templateUrl: 'pages/queryOutput/table.html',

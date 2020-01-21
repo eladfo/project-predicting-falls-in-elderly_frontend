@@ -1,9 +1,9 @@
-angular.module("myApp")
+angular.module("myApp",)
 .controller("optionsController", function ($scope, $http , $window,) {
 
     $scope.moveToGraphs = function() {
         
-        $window.location.href = '#!graphs';
+        $window.location.href = '#!graphsRA';
     }
 
     $scope.moveToTable = function() {
