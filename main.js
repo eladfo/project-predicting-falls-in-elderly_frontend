@@ -60,6 +60,18 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/queryOutput/table.html',
             controller : 'tableController as optionsCtrl'
         })
+        .when('/WindowsCreation', {
+            templateUrl: 'pages/WindowsCreation/WindowsCreation.html',
+            controller : 'WindowsCreationController as wcCtrl'
+        })
+        .when('/KarmaLego', {
+            templateUrl: 'pages/KarmaLego/KarmaLego.html',
+            controller : 'KarmaLegoController as karmaCtrl'
+        })
+        .when('/ClassifiersSelection', {
+            templateUrl: 'pages/ClassifiersSelection/ClassifiersSelection.html',
+            controller : 'ClassifiersSelectionController as csCtrl'
+        })
         // other
         .otherwise({ redirectTo: '/' });
 
